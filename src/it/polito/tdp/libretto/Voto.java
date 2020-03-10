@@ -8,4 +8,11 @@ public class Voto {
 	private String nomeCorso;
 	private LocalDate data;
 	
+	public Voto(int voto, String nomeCorso, LocalDate data) {
+		super();
+		this.voto = voto;
+		this.nomeCorso = nomeCorso;
+		this.data = data;
+	}
+	
 }
