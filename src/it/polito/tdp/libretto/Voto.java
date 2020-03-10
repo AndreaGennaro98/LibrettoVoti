@@ -14,5 +14,31 @@ public class Voto {
 		this.nomeCorso = nomeCorso;
 		this.data = data;
 	}
+
+	public int getVoto() {
+		return voto;
+	}
+
+	public void setVoto(int voto) {
+		this.voto = voto;
+	}
+
+	public String getNomeCorso() {
+		return nomeCorso;
+	}
+
+	public void setNomeCorso(String nomeCorso) {
+		this.nomeCorso = nomeCorso;
+	}
+
+	public LocalDate getData() {
+		return data;
+	}
+
+	public void setData(LocalDate data) {
+		this.data = data;
+	}
+	
+	
 	
 }
