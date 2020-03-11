@@ -25,7 +25,14 @@ public class TestLibretto {
 		Voto v1=libr.cercaEsame("Geometria");
 		Voto v2=libr.cercaEsame("Analisi III");
 		System.out.println(v1+"\n"+v2);
-
+		
+		Voto giusto=new Voto(18,"Geometria",LocalDate.now());
+		Voto sbagliato=new Voto(28,"Geometria",LocalDate.now());
+		Voto mancante=new Voto(30,"Merendine",LocalDate.now());
+		System.out.println("Il voto "+giusto.toString()+" è "+libr.esisteGiaVoto(giusto));
+		System.out.println("Il voto "+sbagliato.toString()+" è "+libr.esisteGiaVoto(sbagliato));
+		System.out.println("Il voto "+mancante.toString()+" è "+libr.esisteGiaVoto(mancante));
+		
 	}
 
 }
