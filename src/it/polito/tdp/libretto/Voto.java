@@ -4,23 +4,23 @@ import java.time.LocalDate;
 
 public class Voto {
 	
-	private int voto;
+	private int punteggio;
 	private String nomeCorso;
 	private LocalDate data;
 	
 	public Voto(int voto, String nomeCorso, LocalDate data) {
 		super();
-		this.voto = voto;
+		this.punteggio = voto;
 		this.nomeCorso = nomeCorso;
 		this.data = data;
 	}
 
-	public int getVoto() {
-		return voto;
+	public int getPunteggio() {
+		return punteggio;
 	}
 
-	public void setVoto(int voto) {
-		this.voto = voto;
+	public void setPunteggio(int voto) {
+		this.punteggio = voto;
 	}
 
 	public String getNomeCorso() {
@@ -41,9 +41,7 @@ public class Voto {
 
 	@Override
 	public String toString() {
-		return String.format("Voto [voto=%s, nomeCorso=%s, data=%s]", voto, nomeCorso, data);
+		return String.format("Voto [voto=%s, nomeCorso=%s, data=%s]", punteggio, nomeCorso, data);
 	}
-	
-	
 	
 }
