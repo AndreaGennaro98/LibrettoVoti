@@ -12,8 +12,15 @@ public class Libretto {
 		this.voti=new ArrayList <Voto>();
 	}
 	
-	public void addVoto(Voto v) {
-		voti.add(v);
+	public boolean addVoto(Voto v) {
+		boolean esistegiavoto=this.esisteGiaVoto(v);
+		boolean einconflitto=this.votoInConflitto(v);
+		if(esistegiavoto==false && einconflitto==false) {
+			voti.add(v);
+			return true;
+		}
+		else
+			return false;
 	}
 	
 	public List <Voto> cercaVoti(int voto){
@@ -41,10 +48,7 @@ public class Libretto {
 		if(pos==-1)
 			return false;
 		else {
-			if(v.getPunteggio()==this.voti.get(pos).getPunteggio())
-				return true;
-			else
-				return false;
+			return v.getPunteggio()==this.voti.get(pos).getPunteggio();
 		}
 		/*Voto trovato=this.cercaEsame(v.getNomeCorso());
 		if(trovato==null)
@@ -55,6 +59,20 @@ public class Libretto {
 			else
 				return false;
 		}*/
+	}
+	
+	public boolean votoInConflitto(Voto v) {
+
+		int pos=this.voti.indexOf(v);
+		if(pos==-1)
+			return false;
+		else {
+			return v.getPunteggio()!=this.voti.get(pos).getPunteggio();
+		}//Il voto esiste e ha un punteggio diverso
+	}
+	
+	public String toString() {
+		return this.voti.toString();
 	}
 	
 }
